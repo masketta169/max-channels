@@ -1,0 +1,25 @@
+// Дополнительные переменные
+$blue-dark: #0d47a1;
+$blue-darker: rgb(97, 114, 243, 1);
+$blue-light: #5472d3;
+$blue-lighter: #819ff7;
+
+// Градиенты
+$blue-gradient: linear-gradient(135deg, $blue-light 0%, $blue-dark 100%);
+
+// Тени
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+// Размеры
+$header-height: 70px;
+$container-width: 1200px;
+
+$white: #ffffff;
+$gray: #e0e0e0;
+$dark-gray: #757575;
+$black: #000000;
+$transition: all 0.3s ease;
+$border-radius: 8px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

@@ -1,0 +1,62 @@
+{
+    "chats": [
+      {
+        "id": 1,
+        "title": "MAX Official Chat",
+        "description": "Официальный чат сообщества MAX",
+        "members": 12500,
+        "link": "https://t.me/maxofficial",
+        "avatar": "https://imgv3.fotor.com/images/side/crop-image-of-the-coconut-tree-with-blue-sky-in-perfect-size-retouch-portrait-face-with-Fotor-photo-editor.png"
+      },
+      {
+        "id": 2,
+        "title": "Tech Enthusiasts",
+        "description": "Обсуждение последних технологических новинок",
+        "members": 8700,
+        "link": "https://t.me/techenthusiasts",
+        "avatar": "https://imgv3.fotor.com/images/side/crop-image-of-the-coconut-tree-with-blue-sky-in-perfect-size-retouch-portrait-face-with-Fotor-photo-editor.png"
+      },
+      {
+        "id": 3,
+        "title": "Криптовалюты и Блокчейн",
+        "description": "Все о криптовалютах, блокчейне и инвестициях",
+        "members": 14300,
+        "link": "https://t.me/cryptomax",
+        "avatar": "https://imgv3.fotor.com/images/side/crop-image-of-the-coconut-tree-with-blue-sky-in-perfect-size-retouch-portrait-face-with-Fotor-photo-editor.png"
+      }
+    ],
+    "channels": [
+      {
+        "id": 1,
+        "title": "MAX News",
+        "description": "Последние новости платформы MAX",
+        "subscribers": 35600,
+        "link": "https://t.me/maxnews",
+        "avatar": "https://imgv3.fotor.com/images/side/crop-image-of-the-coconut-tree-with-blue-sky-in-perfect-size-retouch-portrait-face-with-Fotor-photo-editor.png"
+      },
+      {
+        "id": 2,
+        "title": "IT Вакансии",
+        "description": "Лучшие вакансии в IT индустрии",
+        "subscribers": 28900,
+        "link": "https://t.me/itjobsmax",
+        "avatar": "https://imgv3.fotor.com/images/side/crop-image-of-the-coconut-tree-with-blue-sky-in-perfect-size-retouch-portrait-face-with-Fotor-photo-editor.png"
+      }
+    ],
+    "bots": [
+      {
+        "id": 1,
+        "title": "MAX Helper Bot",
+        "description": "Официальный бот-помощник платформы MAX",
+        "link": "https://t.me/maxhelperbot",
+       "avatar": "https://imgv3.fotor.com/images/side/crop-image-of-the-coconut-tree-with-blue-sky-in-perfect-size-retouch-portrait-face-with-Fotor-photo-editor.png"
+      },
+      {
+        "id": 2,
+        "title": "Crypto Tracker",
+        "description": "Отслеживание курсов криптовалют",
+        "link": "https://t.me/cryptotrackermax",
+        "avatar": "https://imgv3.fotor.com/images/side/crop-image-of-the-coconut-tree-with-blue-sky-in-perfect-size-retouch-portrait-face-with-Fotor-photo-editor.png"
+      }
+    ]
+  }

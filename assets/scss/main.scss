@@ -1,0 +1,19 @@
+html, body, p, h3 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0px; /* ширина скролла */
+    height: 0px; /* высота горизонтального скролла */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* прозрачный фон трека */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.5); /* полупрозрачный ползунок */
+    border-radius: 4px; /* скругление углов */
+}
