@@ -1,0 +1,49 @@
+import axios, { type AxiosRequestHeaders } from 'axios';
+import { authService } from './auth';
+
+const api = axios.create({
+  baseURL: 'http://localhost:3001',
+  withCredentials: true,
+});
+
+// --- 1. Перед запросом добавляем токен ---
+api.interceptors.request.use((config) => {
+  const token = useCookie('accessToken').value;
+  if (token) {
+    if (!config.headers) {
+      config.headers = {} as AxiosRequestHeaders;
+    }
+    config.headers['Authorization'] = `Bearer ${token}`;
+  }
+  return config;
+});
+
+// --- 2. Обрабатываем ответы ---
+api.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    console.log('response error', error?.response?.status);
+
+    if (error.response?.status === 401) {
+      const refreshToken = useCookie('refreshToken').value;
+      if (refreshToken) {
+        try {
+          // пробуем обновить токен
+          const response = await authService.refresh();
+          useCookie('accessToken').value = response.data.accessToken;
+
+          // 🔁 повторяем оригинальный запрос с новым токеном
+          error.config.headers['Authorization'] = `Bearer ${response.data.accessToken}`;
+          return api.request(error.config);
+        } catch (err) {
+          console.error('Refresh token failed:', err);
+          // редирект на логин, если нужно
+        }
+      }
+    }
+
+    return Promise.reject(error);
+  }
+);
+
+export default api;

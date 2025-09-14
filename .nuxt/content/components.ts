@@ -1,11 +1,17 @@
 export const AppHeader = () => import('./../../components/AppHeader.vue')
+export const ApplicationCard = () => import('./../../components/ApplicationCard.vue')
 export const AuthButtons = () => import('./../../components/AuthButtons.vue')
+export const CategoryCardAdmin = () => import('./../../components/CategoryCardAdmin.vue')
 export const Footer = () => import('./../../components/Footer.vue')
+export const FormCreateSubmission = () => import('./../../components/FormCreateSubmission.vue')
 export const ItemCard = () => import('./../../components/ItemCard.vue')
 export const NewsFeed = () => import('./../../components/NewsFeed.vue')
 export const RecentSection = () => import('./../../components/RecentSection.vue')
+export const RecommendedCard = () => import('./../../components/RecommendedCard.vue')
 export const RecommendedSection = () => import('./../../components/RecommendedSection.vue')
 export const Search = () => import('./../../components/Search.vue')
+export const StatusApplication = () => import('./../../components/StatusApplication.vue')
+export const SubmissionCardProfile = () => import('./../../components/SubmissionCardProfile.vue')
 export const NuxtWelcome = () => import('./../../node_modules/nuxt/dist/app/components/welcome.vue')
 export const NuxtLayout = () => import('./../../node_modules/nuxt/dist/app/components/nuxt-layout')
 export const NuxtErrorBoundary = () => import('./../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue')
@@ -35,4 +41,4 @@ export const Html = () => import('./../../node_modules/nuxt/dist/head/runtime/co
 export const Body = () => import('./../../node_modules/nuxt/dist/head/runtime/components')
 export const NuxtIsland = () => import('./../../node_modules/nuxt/dist/app/components/nuxt-island')
 export const globalComponents: string[] = ["ProseA","ProseBlockquote","ProseCode","ProseEm","ProseH1","ProseH2","ProseH3","ProseH4","ProseH5","ProseH6","ProseHr","ProseImg","ProseLi","ProseOl","ProseP","ProsePre","ProseScript","ProseStrong","ProseTable","ProseTbody","ProseTd","ProseTh","ProseThead","ProseTr","ProseUl"]
-export const localComponents: string[] = ["AppHeader","AuthButtons","Footer","ItemCard","NewsFeed","RecentSection","RecommendedSection","Search","NuxtWelcome","NuxtLayout","NuxtErrorBoundary","ClientOnly","DevOnly","ServerPlaceholder","NuxtLink","NuxtLoadingIndicator","NuxtTime","NuxtRouteAnnouncer","NuxtImg","NuxtPicture","ContentRenderer","MDC","MDCCached","MDCRenderer","MDCSlot","NuxtPage","NoScript","Link","Base","Title","Meta","Style","Head","Html","Body","NuxtIsland"]
+export const localComponents: string[] = ["AppHeader","ApplicationCard","AuthButtons","CategoryCardAdmin","Footer","FormCreateSubmission","ItemCard","NewsFeed","RecentSection","RecommendedCard","RecommendedSection","Search","StatusApplication","SubmissionCardProfile","NuxtWelcome","NuxtLayout","NuxtErrorBoundary","ClientOnly","DevOnly","ServerPlaceholder","NuxtLink","NuxtLoadingIndicator","NuxtTime","NuxtRouteAnnouncer","NuxtImg","NuxtPicture","ContentRenderer","MDC","MDCCached","MDCRenderer","MDCSlot","NuxtPage","NoScript","Link","Base","Title","Meta","Style","Head","Html","Body","NuxtIsland"]

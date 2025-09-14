@@ -21,8 +21,8 @@
         <div class="footer__section">
           <h3 class="footer__title">Контакты</h3>
           <ul class="footer__contacts">
-            <li>Email: support@maxcommunity.com</li>
-            <li>Telegram: @maxsupport</li> 
+            <li>Email: learnscriptmail@gmail.com</li>
+            <li>Telegram: @learnscrip</li> 
           </ul>
         </div>
       </div>

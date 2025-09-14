@@ -3,7 +3,8 @@
     <AppHeader />
     
     <main class="main">
-        <RecommendedSection title="Список рекомендованных чатов, каналов и ботов" :chats="recommendedData.chats" :channels="recommendedData.channels" :bots="recommendedData.bots" />
+        <RecommendedSection title="Список рекомендованных чатов, каналов и ботов" :chats="chatsRecommended" :channels="channelsRecommended" :bots="botsRecommended" />
+        <RecommendedSection title="Список недавно добавленных чатов, каналов и ботов" :chats="chatsRecent" :channels="channelsRecent" :bots="botsRecent" />
         <!-- <RecentSection /> -->
         <!-- <NewsFeed /> -->
     </main>
@@ -14,7 +15,33 @@
 
 <script setup>
 import recommendedData from '@/assets/data/recommended.json'
+import { resourceService } from '@/services/api/resources';
+import { submissionService } from '@/services/api/submissions';
+// import type { CategoryResponse } from '@/services/api/submissions';
+// import type { Resource } from '@/services/api/resources';
 
+const categories = ref([]);
+const resources = ref([]);
+
+const chatsRecommended = computed(() => {
+  return resources.value.filter(resource => resource.type === 'CHAT' && resource.isRecommended).slice(0, 5);
+});
+const channelsRecommended = computed(() => {
+  return resources.value.filter(resource => resource.type === 'CHANNEL' && resource.isRecommended).slice(0, 5);
+});
+const botsRecommended = computed(() => {
+  return resources.value.filter(resource => resource.type === 'BOT' && resource.isRecommended).slice(0, 5);
+});
+
+const chatsRecent = computed(() => {
+  return resources.value.reverse().filter(resource => resource.type === 'CHAT' && !resource.isRecommended).slice(0, 5);
+});
+const channelsRecent = computed(() => {
+  return resources.value.reverse().filter(resource => resource.type === 'CHANNEL' && !resource.isRecommended).slice(0, 5);
+});
+const botsRecent = computed(() => {
+  return resources.value.reverse().filter(resource => resource.type === 'BOT' && !resource.isRecommended).slice(0, 5);
+});
 
 useHead({
   title: 'Список рекомендованных чатов, каналов и ботов',
@@ -27,6 +54,16 @@ useHead({
 definePageMeta({
   layout: 'default'
 })
+
+const fetchResources = async () => {
+  const resourcesResponse = await resourceService.getAll();
+  const categoriesResponse = await submissionService.getCategories();
+
+  resources.value = resourcesResponse.data;
+  categories.value = categoriesResponse.data;
+}
+
+fetchResources();
 </script>
 
 <style lang="scss" scoped>

@@ -13,13 +13,19 @@ type HydrationStrategies = {
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 interface _GlobalComponents {
       'AppHeader': typeof import("../components/AppHeader.vue")['default']
+    'ApplicationCard': typeof import("../components/ApplicationCard.vue")['default']
     'AuthButtons': typeof import("../components/AuthButtons.vue")['default']
+    'CategoryCardAdmin': typeof import("../components/CategoryCardAdmin.vue")['default']
     'Footer': typeof import("../components/Footer.vue")['default']
+    'FormCreateSubmission': typeof import("../components/FormCreateSubmission.vue")['default']
     'ItemCard': typeof import("../components/ItemCard.vue")['default']
     'NewsFeed': typeof import("../components/NewsFeed.vue")['default']
     'RecentSection': typeof import("../components/RecentSection.vue")['default']
+    'RecommendedCard': typeof import("../components/RecommendedCard.vue")['default']
     'RecommendedSection': typeof import("../components/RecommendedSection.vue")['default']
     'Search': typeof import("../components/Search.vue")['default']
+    'StatusApplication': typeof import("../components/StatusApplication.vue")['default']
+    'SubmissionCardProfile': typeof import("../components/SubmissionCardProfile.vue")['default']
     'ProseA': typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue")['default']
     'ProseBlockquote': typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseBlockquote.vue")['default']
     'ProseCode': typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseCode.vue")['default']
@@ -75,13 +81,19 @@ interface _GlobalComponents {
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']
       'LazyAppHeader': LazyComponent<typeof import("../components/AppHeader.vue")['default']>
+    'LazyApplicationCard': LazyComponent<typeof import("../components/ApplicationCard.vue")['default']>
     'LazyAuthButtons': LazyComponent<typeof import("../components/AuthButtons.vue")['default']>
+    'LazyCategoryCardAdmin': LazyComponent<typeof import("../components/CategoryCardAdmin.vue")['default']>
     'LazyFooter': LazyComponent<typeof import("../components/Footer.vue")['default']>
+    'LazyFormCreateSubmission': LazyComponent<typeof import("../components/FormCreateSubmission.vue")['default']>
     'LazyItemCard': LazyComponent<typeof import("../components/ItemCard.vue")['default']>
     'LazyNewsFeed': LazyComponent<typeof import("../components/NewsFeed.vue")['default']>
     'LazyRecentSection': LazyComponent<typeof import("../components/RecentSection.vue")['default']>
+    'LazyRecommendedCard': LazyComponent<typeof import("../components/RecommendedCard.vue")['default']>
     'LazyRecommendedSection': LazyComponent<typeof import("../components/RecommendedSection.vue")['default']>
     'LazySearch': LazyComponent<typeof import("../components/Search.vue")['default']>
+    'LazyStatusApplication': LazyComponent<typeof import("../components/StatusApplication.vue")['default']>
+    'LazySubmissionCardProfile': LazyComponent<typeof import("../components/SubmissionCardProfile.vue")['default']>
     'LazyProseA': LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue")['default']>
     'LazyProseBlockquote': LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseBlockquote.vue")['default']>
     'LazyProseCode': LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseCode.vue")['default']>
@@ -143,13 +155,19 @@ declare module 'vue' {
 }
 
 export const AppHeader: typeof import("../components/AppHeader.vue")['default']
+export const ApplicationCard: typeof import("../components/ApplicationCard.vue")['default']
 export const AuthButtons: typeof import("../components/AuthButtons.vue")['default']
+export const CategoryCardAdmin: typeof import("../components/CategoryCardAdmin.vue")['default']
 export const Footer: typeof import("../components/Footer.vue")['default']
+export const FormCreateSubmission: typeof import("../components/FormCreateSubmission.vue")['default']
 export const ItemCard: typeof import("../components/ItemCard.vue")['default']
 export const NewsFeed: typeof import("../components/NewsFeed.vue")['default']
 export const RecentSection: typeof import("../components/RecentSection.vue")['default']
+export const RecommendedCard: typeof import("../components/RecommendedCard.vue")['default']
 export const RecommendedSection: typeof import("../components/RecommendedSection.vue")['default']
 export const Search: typeof import("../components/Search.vue")['default']
+export const StatusApplication: typeof import("../components/StatusApplication.vue")['default']
+export const SubmissionCardProfile: typeof import("../components/SubmissionCardProfile.vue")['default']
 export const ProseA: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue")['default']
 export const ProseBlockquote: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseBlockquote.vue")['default']
 export const ProseCode: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseCode.vue")['default']
@@ -205,13 +223,19 @@ export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']
 export const LazyAppHeader: LazyComponent<typeof import("../components/AppHeader.vue")['default']>
+export const LazyApplicationCard: LazyComponent<typeof import("../components/ApplicationCard.vue")['default']>
 export const LazyAuthButtons: LazyComponent<typeof import("../components/AuthButtons.vue")['default']>
+export const LazyCategoryCardAdmin: LazyComponent<typeof import("../components/CategoryCardAdmin.vue")['default']>
 export const LazyFooter: LazyComponent<typeof import("../components/Footer.vue")['default']>
+export const LazyFormCreateSubmission: LazyComponent<typeof import("../components/FormCreateSubmission.vue")['default']>
 export const LazyItemCard: LazyComponent<typeof import("../components/ItemCard.vue")['default']>
 export const LazyNewsFeed: LazyComponent<typeof import("../components/NewsFeed.vue")['default']>
 export const LazyRecentSection: LazyComponent<typeof import("../components/RecentSection.vue")['default']>
+export const LazyRecommendedCard: LazyComponent<typeof import("../components/RecommendedCard.vue")['default']>
 export const LazyRecommendedSection: LazyComponent<typeof import("../components/RecommendedSection.vue")['default']>
 export const LazySearch: LazyComponent<typeof import("../components/Search.vue")['default']>
+export const LazyStatusApplication: LazyComponent<typeof import("../components/StatusApplication.vue")['default']>
+export const LazySubmissionCardProfile: LazyComponent<typeof import("../components/SubmissionCardProfile.vue")['default']>
 export const LazyProseA: LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue")['default']>
 export const LazyProseBlockquote: LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseBlockquote.vue")['default']>
 export const LazyProseCode: LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseCode.vue")['default']>

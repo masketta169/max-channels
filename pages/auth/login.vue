@@ -7,13 +7,13 @@
             <span>по почте</span>
             <div class="auth-page__left-line"></div>
         </div>
-        <form class="auth-page__left-form">
+        <form class="auth-page__left-form" @submit.prevent="handleLogin">
             <label for="email" class="auth-page__left-label">
                 <svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 4C0 1.92893 1.67893 0.25 3.75 0.25H26.25C28.3211 0.25 30 1.92893 30 4V19C30 21.0711 28.3211 22.75 26.25 22.75H3.75C1.67893 22.75 0 21.0711 0 19V4ZM3.75 2.125C2.71447 2.125 1.875 2.96447 1.875 4V4.4067L15 12.2817L28.125 4.4067V4C28.125 2.96447 27.2855 2.125 26.25 2.125H3.75ZM28.125 6.5933L19.2974 11.8899L28.125 17.3223V6.5933ZM28.0617 19.4849L17.4859 12.9767L15 14.4683L12.5141 12.9767L1.93831 19.4849C2.15202 20.2854 2.88216 20.875 3.75 20.875H26.25C27.1178 20.875 27.848 20.2854 28.0617 19.4849ZM1.875 17.3223L10.7026 11.8899L1.875 6.5933V17.3223Z" fill="#2D31A6" fill-opacity="0.2"/>
                 </svg>
 
-                <input type="email" placeholder="Email" class="auth-page__left-input">
+                <input type="email" placeholder="Email" class="auth-page__left-input" v-model="form.email">
             </label>
             <label for="password" class="auth-page__left-label">
                 <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,7 @@
                 </svg>
 
 
-                <input type="password" placeholder="Пароль" class="auth-page__left-input">
+                <input type="password" placeholder="Пароль" class="auth-page__left-input" v-model="form.password">
             </label>
             <button type="submit" class="auth-page__left-button">Войти</button>
         </form>
@@ -40,11 +40,34 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import { authService } from '@/services/api/auth';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+    
+const form = ref({
+  email: '',
+  password: ''
+})
 
 definePageMeta({
   layout: 'default'
 })
 
+const handleLogin = async () => {
+  try {
+    const response = await authService.login(form.value.email, form.value.password); // accessToken, refreshToken
+    const { accessToken, refreshToken } = response.data;
+
+    useCookie('accessToken').value = accessToken;
+    useCookie('refreshToken').value = refreshToken;
+
+    router.push('/profile');
+  } catch (error) {
+    console.error('Login failed:', error);
+  }
+};
 </script>
 
 <style lang="scss" scoped>

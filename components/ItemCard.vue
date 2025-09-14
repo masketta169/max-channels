@@ -1,12 +1,13 @@
 <template>
   <article class="card">
     <div class="card__content">
-      <img :src="item.avatar" alt="Card Image" class="card__image">
+      <img :src="`http://localhost:3001${item.avatarUrl}`" alt="Card Image" class="card__image">
       <div class="card__meta">
         <h4 class="card__title">{{ item.title }}</h4>
         <p class="card__description">{{ item.description }}</p>
+        {{console.log(item.url)}}
         
-        <NuxtLink :to="item.link" class="card__link" target="_blank">
+        <NuxtLink :to="item.url" class="card__link" target="_blank" rel="noopener noreferrer">
           Присоединиться
         </NuxtLink>
       </div>
@@ -43,6 +44,12 @@ defineProps({
     font-size: 16px;
     margin-bottom: 10px;
     font-weight: 600;
+    margin-top: 0;
+  }
+
+  &__content {
+    display: flex;
+    gap: 10px;
   }
   
   &__description {
@@ -57,24 +64,27 @@ defineProps({
   }
   
   &__link {
-    display: inline-block;
     background: #5472d3;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     transition: $transition;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
     &:hover {
       background: darken($blue-light, 10%);
     }
   }
 
   &__image {
-    width: 100%;
-    max-height: 100px;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
     object-fit: cover;
-    border-radius: 5px;
   }
 }
 </style>
