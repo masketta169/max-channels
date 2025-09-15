@@ -25,7 +25,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend-app:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend-app-max:latest
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
@@ -37,5 +37,5 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
           cd /opt/app
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/frontend-app:latest
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/frontend-app-max:latest
           docker-compose up -d frontend
