@@ -1,14 +1,21 @@
 FROM node:20 AS builder
 
+# Устанавливаем Yarn глобально
+RUN npm install -g yarn
+
 WORKDIR /app
 
+# Копируем файлы, специфичные для Yarn
 COPY package*.json ./
-RUN npm install
+COPY yarn.lock ./
+
+# Используем Yarn вместо npm
+RUN yarn install --frozen-lockfile
 
 COPY . .
-RUN npm run build
+RUN yarn build
 
-FROM node:20 AS production
+FROM node:20-slim AS production
 
 WORKDIR /app
 
