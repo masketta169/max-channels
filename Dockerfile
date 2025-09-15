@@ -23,5 +23,9 @@ COPY --from=build /app/.output ./.output
 COPY package.json yarn.lock ./
 
 ENV NODE_ENV=production
+ENV NITRO_PRESET=node
 EXPOSE 3000
+
+
+
 CMD ["node", ".output/server/index.mjs"]
