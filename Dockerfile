@@ -16,6 +16,10 @@ COPY --from=builder /app/.output ./.output
 COPY --from=builder /app/node_modules ./node_modules
 COPY package*.json ./
 
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nuxt -u 1001
+USER nuxt
+
 EXPOSE 3000
 
 ENV NODE_ENV=production
