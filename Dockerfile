@@ -1,33 +1,25 @@
-# Build Stage 1
-
-FROM node:22-alpine AS build
+# Build Stage
+FROM node:22-alpine AS builder
 WORKDIR /app
 
-RUN corepack enable
+# Очищаем кэш и устанавливаем
+RUN npm cache clean --force
 
-# Copy package.json and your lockfile, here we add pnpm-lock.yaml for illustration
 COPY package.json package-lock.json ./
+RUN rm -rf node_modules && npm install
 
-# Install dependencies
-RUN npm ci
-
-# Copy the entire project
-COPY . ./
-
-# Build the project
+COPY . .
 RUN npm run build
 
-# Build Stage 2
-
-FROM node:22-alpine
+# Production Stage
+FROM node:22-alpine AS production
 WORKDIR /app
 
-# Only `.output` folder is needed from the build stage
-COPY --from=build /app/.output/ ./
+COPY --from=builder /app/.output ./
 
-# Change the port and host
 ENV PORT=3000
+ENV HOST=0.0.0.0
+ENV NODE_ENV=production
 
 EXPOSE 3000
-
 CMD ["node", "/app/server/index.mjs"]
