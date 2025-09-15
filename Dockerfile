@@ -1,45 +1,33 @@
-# Build Stage
-FROM node:22-slim AS builder
+# Build Stage 1
 
+FROM node:22-alpine AS build
 WORKDIR /app
 
-# Устанавливаем Yarn
-RUN apt-get update && apt-get install -y curl && \
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    apt-get update && apt-get install -y yarn
+RUN corepack enable
 
-# Копируем файлы зависимостей
-COPY package.json yarn.lock ./
+# Copy package.json and your lockfile, here we add pnpm-lock.yaml for illustration
+COPY package.json pnpm-lock.yaml .npmrc ./
 
-# Устанавливаем зависимости
-RUN yarn install --frozen-lockfile
+# Install dependencies
+RUN pnpm i
 
-# Копируем весь проект
-COPY . .
+# Copy the entire project
+COPY . ./
 
-# Собираем проект
-RUN yarn build
+# Build the project
+RUN pnpm run build
 
-# Production Stage
-FROM node:22-slim AS production
+# Build Stage 2
 
+FROM node:22-alpine
 WORKDIR /app
 
-# Устанавливаем зависимости для production если нужны
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates && \
-    rm -rf /var/lib/apt/lists/*
+# Only `.output` folder is needed from the build stage
+COPY --from=build /app/.output/ ./
 
-# Копируем только собранное приложение
-COPY --from=builder /app/.output ./
-
-# Настраиваем переменные окружения
-ENV PORT=80
-ENV HOST=0.0.0.0
-ENV NODE_ENV=production
+# Change the port and host
+ENV PORT=3000
 
 EXPOSE 80
 
-# Запускаем приложение
 CMD ["node", "/app/server/index.mjs"]
