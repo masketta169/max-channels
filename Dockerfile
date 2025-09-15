@@ -1,5 +1,5 @@
 # --- Этап сборки ---
-FROM node:20-alpine AS build
+FROM node:20 AS build
 
 # Рабочая директория
 WORKDIR /app
@@ -13,7 +13,7 @@ COPY . .
 RUN yarn build
 
 # --- Этап продакшн ---
-FROM node:20-alpine AS production
+FROM node:20 AS production
 
 WORKDIR /app
 
