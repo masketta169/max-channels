@@ -17,8 +17,10 @@ jobs:
         node-version: '20'
         cache: 'npm'
 
-    - name: Install dependencies
-      run: npm ci
+    - name: Clean install dependencies
+      run: |
+        rm -rf node_modules package-lock.json
+        npm install
 
     - name: Build project
       run: npm run build
@@ -35,7 +37,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: .  # ← Изменили на текущую директорию
+        context: .
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend-app:latest
 
