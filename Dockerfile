@@ -1,25 +1,31 @@
-# Build Stage
-FROM node:22-alpine AS builder
+# --- Этап сборки ---
+FROM node:20-alpine AS build
+
+# Рабочая директория
 WORKDIR /app
 
-# Очищаем кэш и устанавливаем
-RUN npm cache clean --force
+# Установим зависимости
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 
-COPY package.json package-lock.json ./
-RUN rm -rf node_modules && npm install
-
+# Скопируем исходники и соберём
 COPY . .
-RUN npm run build
+RUN yarn build
 
-# Production Stage
-FROM node:22-alpine AS production
+# --- Этап продакшн ---
+FROM node:20-alpine AS production
+
 WORKDIR /app
 
-COPY --from=builder /app/.output ./
+# Установим только прод-зависимости (без devDependencies)
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile --production
 
-ENV PORT=3000
-ENV HOST=0.0.0.0
-ENV NODE_ENV=production
+# Скопируем сборку из предыдущего этапа
+COPY --from=build /app/.output ./.output
 
+# Открываем порт Nuxt-приложения (по умолчанию 3000)
 EXPOSE 3000
-CMD ["node", "/app/server/index.mjs"]
+
+# Запуск Nuxt
+CMD ["node", ".output/server/index.mjs"]
