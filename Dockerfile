@@ -1,26 +1,45 @@
-FROM node:20 AS builder
+# Build Stage
+FROM node:22-slim AS builder
 
 WORKDIR /app
 
-# Включаем corepack и используем Yarn
-RUN corepack enable
+# Устанавливаем Yarn
+RUN apt-get update && apt-get install -y curl && \
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update && apt-get install -y yarn
 
-COPY package*.json ./
-COPY yarn.lock ./
+# Копируем файлы зависимостей
+COPY package.json yarn.lock ./
 
-# Используем yarn для установки зависимостей
+# Устанавливаем зависимости
 RUN yarn install --frozen-lockfile
 
+# Копируем весь проект
 COPY . .
+
+# Собираем проект
 RUN yarn build
 
-FROM node:20-slim AS production
+# Production Stage
+FROM node:22-slim AS production
 
 WORKDIR /app
 
+# Устанавливаем зависимости для production если нужны
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+
+# Копируем только собранное приложение
 COPY --from=builder /app/.output ./
-COPY --from=builder /app/node_modules ./node_modules
 
-EXPOSE 3000
+# Настраиваем переменные окружения
+ENV PORT=80
+ENV HOST=0.0.0.0
+ENV NODE_ENV=production
 
-CMD ["node", "./server/index.mjs"]
+EXPOSE 80
+
+# Запускаем приложение
+CMD ["node", "/app/server/index.mjs"]
