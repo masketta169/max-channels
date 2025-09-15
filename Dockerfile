@@ -1,15 +1,14 @@
 FROM node:20 AS builder
 
-# Устанавливаем Yarn глобально
-RUN npm install -g yarn
-
 WORKDIR /app
 
-# Копируем файлы, специфичные для Yarn
+# Включаем corepack и используем Yarn
+RUN corepack enable
+
 COPY package*.json ./
 COPY yarn.lock ./
 
-# Используем Yarn вместо npm
+# Используем yarn для установки зависимостей
 RUN yarn install --frozen-lockfile
 
 COPY . .
