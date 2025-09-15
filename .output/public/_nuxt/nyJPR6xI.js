@@ -1,0 +1,1 @@
+import{_ as a,c as o,a as e,o as s}from"./CvK9njM3.js";const n={__name:"about",setup(l){return(c,t)=>(s(),o("div",null,t[0]||(t[0]=[e("h1",null,"About Page",-1),e("p",null,"This is the about page content.",-1),e("div",{class:"content"},[e("p",null,"All elements must have proper closing tags.")],-1)])))}},r=a(n,[["__scopeId","data-v-e26c1e66"]]);export{r as default};

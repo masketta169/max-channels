@@ -20,6 +20,9 @@ WORKDIR /app
 # копируем только нужное для запуска
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/.output ./.output
+COPY --from=builder /app/public ./public
+
+
 COPY package.json yarn.lock ./
 
 ENV NODE_ENV=production

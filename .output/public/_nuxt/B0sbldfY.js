@@ -1,0 +1,1 @@
+import{l as s,m as t}from"./CvK9njM3.js";import{u as o}from"./B0FIwMiM.js";const _={__name:"logout",setup(n){const e=t(),u=async()=>{o("accessToken").value=null,o("refreshToken").value=null,e.push("/")};return s(()=>{u()}),(r,a)=>null}};export{_ as default};
