@@ -38,4 +38,4 @@ jobs:
         script: |
           cd /opt/app
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/frontend-app-max:latest
-          docker-compose up -d frontend
+          docker compose up -d frontend
