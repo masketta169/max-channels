@@ -27,10 +27,10 @@ export default defineNuxtRouteMiddleware((to) => {
     // console.log(decoded);
     // console.log(decoded.role);
     // console.log(token)
-    // console.log("[ADMIN MIDDLEWARE] Декодированный токен:", decoded);
+    console.log("[ADMIN MIDDLEWARE] Декодированный токен:", decoded);
 
     if (decoded.role !== "ADMIN") {
-      // console.log("[ADMIN MIDDLEWARE] Роль не ADMIN, редирект на /");
+      console.log("[ADMIN MIDDLEWARE] Роль не ADMIN, редирект на /");
       return navigateTo("/");
     }
 
