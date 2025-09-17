@@ -2,7 +2,7 @@
     <div class="admin-submissions-page">
         <h1 class="admin-submissions-page__title">Заявки</h1>
         <div class="applications-list">
-            <ApplicationCard v-for="submission in submissions.reverse()" :key="submission.id" :application="submission" @approveSubmission="fetchSubmissions" />
+            <ApplicationCard v-for="submission in submissions" :key="submission.id" :application="submission" @approveSubmission="fetchSubmissions" />
         </div>
     </div>
 </template>
@@ -22,7 +22,7 @@ definePageMeta({
 const submissions = ref<SubmissionResponse[]>([]);
 
 const fetchSubmissions = async () => {
-  submissions.value = await adminService.getSubmissions().then(res => res.data);
+  submissions.value = await adminService.getSubmissions().then(res => res.data.reverse());
   // console.log(submissions.value);
 }
 
