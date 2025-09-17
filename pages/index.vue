@@ -46,9 +46,19 @@ const botsRecent = computed(() => {
 useHead({
   title: 'Список рекомендованных чатов, каналов и ботов',
   meta: [
-    { name: 'description', content: 'Discover recommended chats, channels and bots in the MAX community. Join thousands of users in popular communities.' },
-    { name: 'keywords', content: 'MAX, chats, channels, bots, community, telegram' }
-  ]
+    { name: 'description', content: 'Подборка лучших чатов, каналов и ботов Telegram от сообщества MAX. Присоединяйтесь к популярным сообществам и находите новое.' },
+    { name: 'keywords', content: 'telegram, чаты, каналы, боты, MAX community, рекомендованные' },
+
+    // Open Graph
+    { property: 'og:type', content: 'website' },
+    { property: 'og:title', content: 'Рекомендованные чаты, каналы и боты | MAX Community' },
+    { property: 'og:description', content: 'Подборка лучших чатов, каналов и ботов Telegram от сообщества MAX.' },
+    { property: 'og:url', content: 'https://max-community.ru/' },
+    { property: 'og:site_name', content: 'MAX Community' },
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://max-community.ru/' }
+  ],
 })
 
 definePageMeta({
