@@ -19,6 +19,8 @@ import { resourceService } from '@/services/api/resources';
 import { submissionService } from '@/services/api/submissions';
 // import type { CategoryResponse } from '@/services/api/submissions';
 // import type { Resource } from '@/services/api/resources';
+import { onMounted } from 'vue'
+
 
 const categories = ref([]);
 const resources = ref([]);
@@ -74,6 +76,18 @@ const fetchResources = async () => {
 }
 
 fetchResources();
+
+onMounted(() => {
+  if (window.yaContextCb) {
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: 'R-A-17285874-1',
+        type: 'floorAd',
+        platform: 'desktop'
+      })
+    })
+  }
+})
 </script>
 
 <style lang="scss" scoped>
