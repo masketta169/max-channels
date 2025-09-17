@@ -1,6 +1,0 @@
-import { p as publicAssetsURL } from '../nitro/nitro.mjs';
-
-const AuthButtons_vue_vue_type_style_index_0_scoped_e518b32f_lang = "@font-face{font-family:Montserrat;font-style:normal;font-weight:400;src:url(" + publicAssetsURL("/fonts/Montserrat-Regular.ttf") + ') format("truetype")}.auth-buttons[data-v-e518b32f]{display:flex;gap:1rem}.auth-buttons__btn[data-v-e518b32f]{border:1px solid transparent;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;height:40px;padding:0 50px;transition:all .3s ease}.auth-buttons__btn--login[data-v-e518b32f]{background:#fff;color:#6172f3}.auth-buttons__btn--login[data-v-e518b32f]:hover{background:#3254c2;color:#fff}.auth-buttons__btn--register[data-v-e518b32f]{background:#5472d3;color:#fff}.auth-buttons__btn--register[data-v-e518b32f]:hover{background:#fff;color:#6172f3}';
-
-export { AuthButtons_vue_vue_type_style_index_0_scoped_e518b32f_lang as A };
-//# sourceMappingURL=AuthButtons-styles-1.mjs-BuqfImCd.mjs.map

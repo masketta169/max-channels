@@ -13,6 +13,7 @@ api.interceptors.request.use((config) => {
   const token = getCookie('accessToken');
   if (token) {
     if (!config.headers) {
+      
       config.headers = {} as AxiosRequestHeaders;
     }
     config.headers['Authorization'] = `Bearer ${token}`;

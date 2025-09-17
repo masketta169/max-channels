@@ -1,6 +1,0 @@
-import { p as publicAssetsURL } from '../nitro/nitro.mjs';
-
-const RecommendedSection_vue_vue_type_style_index_0_scoped_4f5a7efa_lang = "@font-face{font-family:Montserrat;font-style:normal;font-weight:400;src:url(" + publicAssetsURL("/fonts/Montserrat-Regular.ttf") + ') format("truetype")}.container[data-v-4f5a7efa]{display:flex;flex-direction:column;gap:20px}.recommended[data-v-4f5a7efa]{padding:2rem 0}.recommended__title[data-v-4f5a7efa]{color:#09090b;font-size:24px;margin:0;text-align:left}.recommended__grid[data-v-4f5a7efa]{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}.recommended__category[data-v-4f5a7efa]{background:#fff;border-radius:8px;box-shadow:0 2px 10px #0003;padding:1.5rem}.recommended__subtitle[data-v-4f5a7efa]{border-bottom:1px solid #09090b;color:#09090b;font-size:1.5rem;margin-bottom:1rem;padding-bottom:.5rem}.recommended__items[data-v-4f5a7efa]{display:grid;gap:1rem}';
-
-export { RecommendedSection_vue_vue_type_style_index_0_scoped_4f5a7efa_lang as R };
-//# sourceMappingURL=RecommendedSection-styles-1.mjs-ruCdsACA.mjs.map
