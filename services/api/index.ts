@@ -1,8 +1,10 @@
 import axios, { type AxiosRequestHeaders } from 'axios';
 import { authService } from './auth';
+import { useRuntimeConfig } from "#app";
+import { useCookie } from "#app";
 
 const api = axios.create({
-  baseURL: 'http://localhost:3001',
+  baseURL: 'https://max-community.ru/api', 
   withCredentials: true,
 });
 

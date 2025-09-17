@@ -1,6 +1,11 @@
 import path from 'path'
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      apiUrl: process.env.API_URL,
+    },
+  },
   css: ['@/assets/scss/main.scss'],
   modules: ['@nuxt/content'],
   vite: {
