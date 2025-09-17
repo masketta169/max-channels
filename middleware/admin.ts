@@ -7,8 +7,8 @@ export default defineNuxtRouteMiddleware((to) => {
   console.log(token);
 
   if (!token) {
-    // console.log("[ADMIN MIDDLEWARE] Нет токена, редирект на /");
-    return navigateTo("/");
+    console.log("[ADMIN MIDDLEWARE] Нет токена, редирект на /");
+    // return navigateTo("/");
   }
 
   try {
@@ -25,6 +25,6 @@ export default defineNuxtRouteMiddleware((to) => {
 
   } catch (e) {
     console.error("[ADMIN MIDDLEWARE] Ошибка парсинга токена:", e);
-    return navigateTo("/");
+    // return navigateTo("/");
   }
 });
