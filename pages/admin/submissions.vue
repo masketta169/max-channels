@@ -22,7 +22,7 @@ definePageMeta({
 const submissions = ref<SubmissionResponse[]>([]);
 
 const fetchSubmissions = async () => {
-  submissions.value = await adminService.getSubmissions().then(res => res.data.reverse());
+  submissions.value = await adminService.getSubmissions().then(res => res.data);
   // console.log(submissions.value);
 }
 
