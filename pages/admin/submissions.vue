@@ -2,7 +2,7 @@
     <div class="admin-submissions-page">
         <h1 class="admin-submissions-page__title">Заявки</h1>
         <div class="applications-list">
-            <ApplicationCard v-for="submission in submissions" :key="submission.id" :application="submission" @approveSubmission="fetchSubmissions" />
+            <ApplicationCard v-for="submission in submissions" :key="submission.id" :application="submission" @approveSubmission="fetchSubmissions" @rejectApplication="fetchSubmissions" />
         </div>
     </div>
 </template>
