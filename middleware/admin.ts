@@ -3,8 +3,19 @@ import { jwtDecode } from "jwt-decode";
 import { getCookie } from '@/utils/cookies'
 
 export default defineNuxtRouteMiddleware((to) => {
-  const token = getCookie("accessToken");
-  console.log(token);
+  const token2 = getCookie("accessToken");
+
+  const event = useRequestEvent();
+  const cookies = event?.req?.headers?.cookie || "";
+
+  const token = cookies
+    .split(";")
+    .map(c => c.trim())
+    .find(c => c.startsWith("accessToken="))
+    ?.split("=")[1];
+
+  console.log('token', token);
+  console.log('token2', token2);
 
   if (!token) {
     console.log("[ADMIN MIDDLEWARE] Нет токена, редирект на /");
