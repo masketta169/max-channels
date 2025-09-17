@@ -1,7 +1,7 @@
 <template>
   <article class="card">
     <div class="card__content">
-      <img :src="`http://localhost:3001${item.avatarUrl}`" alt="Card Image" class="card__image">
+      <img :src="`https://max-community.ru${item.avatarUrl}`" alt="Card Image" class="card__image">
       <div class="card__meta">
         <h4 class="card__title">{{ item.title }}</h4>
         <p class="card__description">{{ item.description }}</p>

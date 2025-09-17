@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="application-card__avatar-container">
-            <img :src="`http://localhost:3001${submission.avatarUrl}`" alt="Application Avatar" class="application-card__avatar" />
+            <img :src="`https://max-community.ru${submission.avatarUrl}`" alt="Application Avatar" class="application-card__avatar" />
             <h3 class="application-card__title">
                 {{ submission.title }}
             </h3>

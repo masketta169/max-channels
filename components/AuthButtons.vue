@@ -3,7 +3,7 @@
     <button class="auth-buttons__btn auth-buttons__btn--login" @click="navigateTo('/auth/login')">
       Войти
     </button>
-    <button class="auth-buttons__btn auth-buttons__btn--register">
+    <button class="auth-buttons__btn auth-buttons__btn--register" @click="navigateTo('/auth/register')">
       Регистрация
     </button>
   </div>
