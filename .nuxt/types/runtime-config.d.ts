@@ -35,6 +35,8 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
    },
   }
   interface SharedPublicRuntimeConfig {
+   apiUrl: string,
+
    content: {
       wsUrl: string,
    },

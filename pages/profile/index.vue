@@ -25,7 +25,7 @@ const createSubmission = async () => {
     type: 'CHANNEL',
     description: 'Test',
   });
-  console.log(response);
+  // console.log(response);
 }
 
 const handleCreateSubmission = () => {

@@ -95,7 +95,7 @@ const categories = ref<CategoryResponse[]>([]);
 
 const handleImageChange = (e: Event) => {
   const file = (e.target as HTMLInputElement).files?.[0];
-  console.log(file);
+  // console.log(file);
   if (file) {
     form.value.avatarUrl = file;
   }

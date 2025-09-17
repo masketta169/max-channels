@@ -4,12 +4,13 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
+import { setCookie } from '@/utils/cookies'
 
 const router = useRouter();
 
 const logout = async () => {
-    useCookie('accessToken').value = null;
-    useCookie('refreshToken').value = null;
+    setCookie('accessToken', '');
+    setCookie('refreshToken', '');
     router.push('/');
 }
 

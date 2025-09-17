@@ -43,6 +43,7 @@
 import { ref } from 'vue';
 import { authService } from '@/services/api/auth';
 import { useRouter } from 'vue-router';
+import { setCookie } from '@/utils/cookies'
 
 const router = useRouter();
     
@@ -60,8 +61,8 @@ const handleLogin = async () => {
     const response = await authService.login(form.value.email, form.value.password); // accessToken, refreshToken
     const { accessToken, refreshToken } = response.data;
 
-    useCookie('accessToken').value = accessToken;
-    useCookie('refreshToken').value = refreshToken;
+    setCookie('accessToken', accessToken);
+    setCookie('refreshToken', refreshToken);
 
     router.push('/profile');
   } catch (error) {

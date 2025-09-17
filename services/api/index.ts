@@ -1,7 +1,7 @@
 import axios, { type AxiosRequestHeaders } from 'axios';
 import { authService } from './auth';
 import { useRuntimeConfig } from "#app";
-import { useCookie } from "#app";
+import { getCookie, setCookie } from '@/utils/cookies'
 
 const api = axios.create({
   baseURL: 'https://max-community.ru/api', 
@@ -10,7 +10,7 @@ const api = axios.create({
 
 // --- 1. Перед запросом добавляем токен ---
 api.interceptors.request.use((config) => {
-  const token = useCookie('accessToken').value;
+  const token = getCookie('accessToken');
   if (token) {
     if (!config.headers) {
       config.headers = {} as AxiosRequestHeaders;
@@ -27,12 +27,12 @@ api.interceptors.response.use(
     console.log('response error', error?.response?.status);
 
     if (error.response?.status === 401) {
-      const refreshToken = useCookie('refreshToken').value;
+      const refreshToken = getCookie('refreshToken');
       if (refreshToken) {
         try {
           // пробуем обновить токен
           const response = await authService.refresh();
-          useCookie('accessToken').value = response.data.accessToken;
+          setCookie('accessToken', response.data.accessToken);
 
           // 🔁 повторяем оригинальный запрос с новым токеном
           error.config.headers['Authorization'] = `Bearer ${response.data.accessToken}`;

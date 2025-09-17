@@ -5,7 +5,7 @@
       <div class="card__meta">
         <h4 class="card__title">{{ item.title }}</h4>
         <p class="card__description">{{ item.description }}</p>
-        {{console.log(item.url)}}
+        <!-- {{console.log(item.url)}} -->
         
         <NuxtLink :to="item.url" class="card__link" target="_blank" rel="noopener noreferrer">
           Присоединиться

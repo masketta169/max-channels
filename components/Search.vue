@@ -20,7 +20,7 @@ const searchQuery = ref('')
 
 const performSearch = () => {
   // Здесь будет логика поиска
-  console.log('Searching for:', searchQuery.value)
+  // console.log('Searching for:', searchQuery.value)
 }
 </script>
 

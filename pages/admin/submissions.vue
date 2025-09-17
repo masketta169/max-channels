@@ -23,7 +23,7 @@ const submissions = ref<SubmissionResponse[]>([]);
 
 const fetchSubmissions = async () => {
   submissions.value = await adminService.getSubmissions().then(res => res.data);
-  console.log(submissions.value);
+  // console.log(submissions.value);
 }
 
 onMounted(() => {
