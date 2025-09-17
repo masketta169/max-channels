@@ -31,6 +31,13 @@ export default defineNuxtConfig({
             accurateTrackBounce:true,
             trackLinks:true
           });`
+        },
+        {
+          innerHTML: `window.yaContextCb=window.yaContextCb||[]`
+        },
+        {
+          src: 'https://yandex.ru/ads/system/context.js',
+          async: true
         }
       ],
       noscript: [
