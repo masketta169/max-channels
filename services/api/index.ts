@@ -4,7 +4,7 @@ import { useRuntimeConfig } from "#app";
 import { getCookie, setCookie } from '@/utils/cookies'
 
 const api = axios.create({
-  baseURL: 'https://max-community.ru/api', 
+  baseURL: 'https://max-community.ru/api/api', 
   withCredentials: true,
 });
 
@@ -13,7 +13,7 @@ api.interceptors.request.use((config) => {
   const token = getCookie('accessToken');
   if (token) {
     if (!config.headers) {
-      
+
       config.headers = {} as AxiosRequestHeaders;
     }
     config.headers['Authorization'] = `Bearer ${token}`;
