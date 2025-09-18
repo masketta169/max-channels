@@ -14,7 +14,7 @@
           <ul class="footer__links">
             <li><NuxtLink to="/" class="footer__link">Главная</NuxtLink></li>
             <li><NuxtLink to="/about" class="footer__link">О проекте</NuxtLink></li>
-            <li><NuxtLink to="/contact" class="footer__link">Контакты</NuxtLink></li>
+            <!-- <li><NuxtLink to="/contact" class="footer__link">Контакты</NuxtLink></li> -->
           </ul>
         </div>
         

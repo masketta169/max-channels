@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header__container container">
       <div class="header__logo">
-        <NuxtLink to="/" class="header__logo-link">MAX Community</NuxtLink>
+        <NuxtLink to="/" class="header__logo-link" @click.prevent="router.push('/')">MAX Community</NuxtLink>
       </div>
       
       <div class="header__search">
@@ -19,6 +19,11 @@
 <script setup>
 import SearchInput from './Search.vue'
 import AuthButtons from './AuthButtons.vue'
+import { useRouter } from 'vue-router';
+
+
+const router = useRouter();
+
 </script>
 
 <style lang="scss" scoped>

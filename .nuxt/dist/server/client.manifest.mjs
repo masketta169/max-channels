@@ -1,0 +1,1 @@
+export { default } from "file:///Users/andrejbelaev/Desktop/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/Max-app/max-channels/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"

@@ -50,7 +50,7 @@
 
         <label>
             <span>Категория</span>
-            <div class="form-create-submission__form-input">
+            <div class="form-create-submission__form-input--checkbox">
               <div class="form-create-submission__form-select">
                 <div class="form-create-submission__form-select-item" v-for="category in categories.data" :key="category.id">
                   <input type="checkbox" v-model="form.categoryIds" :value="category.id" />
@@ -161,6 +161,8 @@ const handleCancelSubmit = () => {
     border-radius: 10px;
     width: 500px;
     margin: 0 auto;
+    max-height: 90vh;
+    overflow: auto;
 
     &__title {
         font-size: 24px;
@@ -194,6 +196,42 @@ const handleCancelSubmit = () => {
             box-shadow: 0 2px 10px rgba($blue-darker, 0.5);
             transition: $transition;
         }
+    }
+
+    &__form-input--checkbox {
+        border: 1px solid transparent;
+        color: #09090B;
+        background: white;
+        border-radius: $border-radius;
+        color: #09090B;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::placeholder {
+            color: rgba(#09090B, 0.5);
+        }
+
+        &:focus-within {
+            border: 1px solid $blue-darker;
+            box-shadow: 0 2px 10px rgba($blue-darker, 0.5);
+            transition: $transition;
+        }
+    }
+
+    &__form-select-item {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__form-select {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
     }
 
     &__form-input input[type="text"] {

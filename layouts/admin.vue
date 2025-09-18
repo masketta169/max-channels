@@ -15,6 +15,10 @@
                 <li class="admin-page__nav-item">
                     <NuxtLink to="/admin/recommend" class="admin-page__nav-link" :class="{'active': $route.path === '/admin/recommend'}">Рекомендации</NuxtLink>
                 </li>
+
+                <li class="admin-page__nav-item">
+                    <NuxtLink to="/admin/resources" class="admin-page__nav-link" :class="{'active': $route.path === '/admin/resources'}">Ресурсы</NuxtLink>
+                </li>
             </ul>
         </nav>
 

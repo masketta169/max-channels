@@ -8,5 +8,6 @@ export const resourceService = {
     api.get<Resource[]>(`/resources/category/${categoryId}`),
   getRecommended: () => api.get<Resource[]>('/resources/recommended'),
   changeRecommended: (id: string, isRecommended: boolean) => api.put<Resource>(`/resources/${id}/recommended`, { isRecommended }),
+  deleteById: (id: string) => api.delete<Resource>(`/resources/${id}`),
 };
 
