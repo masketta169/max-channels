@@ -1,0 +1,97 @@
+import { _ as __nuxt_component_0 } from './nuxt-link-BE05uIrA.mjs';
+import { _ as _export_sfc, f as __nuxt_component_1 } from './server.mjs';
+import { mergeProps, withCtx, createBlock, openBlock, createVNode, createTextVNode, useSSRContext } from 'vue';
+import { ssrRenderAttrs, ssrRenderComponent } from 'vue/server-renderer';
+import '../nitro/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:crypto';
+import 'node:url';
+import 'better-sqlite3';
+import 'vue-router';
+
+const _sfc_main = {};
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
+  const _component_NuxtLink = __nuxt_component_0;
+  const _component_NuxtPage = __nuxt_component_1;
+  _push(`<div${ssrRenderAttrs(mergeProps({ class: "admin-page" }, _attrs))} data-v-5b380cd5><div class="admin-page__content" data-v-5b380cd5><nav class="admin-page__nav" data-v-5b380cd5>`);
+  _push(ssrRenderComponent(_component_NuxtLink, {
+    to: "/logout",
+    class: "admin-page__nav-logout",
+    onClick: _ctx.logout
+  }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`<svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" data-v-5b380cd5${_scopeId}><path d="M17 16L21 12M21 12L17 8M21 12L7 12M13 16V17C13 18.6569 11.6569 20 10 20H6C4.34315 20 3 18.6569 3 17V7C3 5.34315 4.34315 4 6 4H10C11.6569 4 13 5.34315 13 7V8" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" data-v-5b380cd5${_scopeId}></path></svg>`);
+      } else {
+        return [
+          (openBlock(), createBlock("svg", {
+            fill: "none",
+            height: "24",
+            viewBox: "0 0 24 24",
+            width: "24",
+            xmlns: "http://www.w3.org/2000/svg"
+          }, [
+            createVNode("path", {
+              d: "M17 16L21 12M21 12L17 8M21 12L7 12M13 16V17C13 18.6569 11.6569 20 10 20H6C4.34315 20 3 18.6569 3 17V7C3 5.34315 4.34315 4 6 4H10C11.6569 4 13 5.34315 13 7V8",
+              stroke: "#374151",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round",
+              "stroke-width": "2"
+            })
+          ]))
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`<ul class="admin-page__nav-list" data-v-5b380cd5><li class="admin-page__nav-item" data-v-5b380cd5>`);
+  _push(ssrRenderComponent(_component_NuxtLink, {
+    to: "/profile",
+    class: ["admin-page__nav-link", { "active": _ctx.$route.path === "/profile" }]
+  }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`Личный кабинет`);
+      } else {
+        return [
+          createTextVNode("Личный кабинет")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li class="admin-page__nav-item" data-v-5b380cd5>`);
+  _push(ssrRenderComponent(_component_NuxtLink, {
+    to: "/profile/submissions",
+    class: ["admin-page__nav-link", { "active": _ctx.$route.path === "/profile/submissions" }]
+  }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`Заявки`);
+      } else {
+        return [
+          createTextVNode("Заявки")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li></ul></nav>`);
+  _push(ssrRenderComponent(_component_NuxtPage, null, null, _parent));
+  _push(`</div></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("layouts/profile.vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const profile = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender], ["__scopeId", "data-v-5b380cd5"]]);
+
+export { profile as default };
+//# sourceMappingURL=profile-iqU1t8uT.mjs.map

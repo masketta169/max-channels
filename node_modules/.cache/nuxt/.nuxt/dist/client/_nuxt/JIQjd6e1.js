@@ -1,0 +1,1 @@
+const i=t=>{if(typeof document>"u")return null;const e=`; ${document.cookie}`.split(`; ${t}=`);return e.length===2&&e.pop()?.split(";").shift()||null},s=(t,o,e=7)=>{if(typeof document>"u")return;const n=new Date;n.setTime(n.getTime()+e*24*60*60*1e3),document.cookie=`${t}=${o};expires=${n.toUTCString()};path=/`};export{i as g,s};

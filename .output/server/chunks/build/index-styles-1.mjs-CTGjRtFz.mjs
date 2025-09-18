@@ -1,0 +1,6 @@
+import { p as publicAssetsURL } from '../nitro/nitro.mjs';
+
+const index_vue_vue_type_style_index_0_scoped_a6830c61_lang = "@font-face{font-family:Montserrat;font-style:normal;font-weight:400;src:url(" + publicAssetsURL("/fonts/Montserrat-Regular.ttf") + ') format("truetype")}.fade-enter-active[data-v-a6830c61],.fade-leave-active[data-v-a6830c61]{transition:opacity .2s ease}.fade-enter-from[data-v-a6830c61],.fade-leave-to[data-v-a6830c61]{opacity:0}.profile__button[data-v-a6830c61]{background-color:#007bff;border:none;border-radius:8px;color:#fff;cursor:pointer;font-size:16px;height:40px;width:40%;width:140px}';
+
+export { index_vue_vue_type_style_index_0_scoped_a6830c61_lang as i };
+//# sourceMappingURL=index-styles-1.mjs-CTGjRtFz.mjs.map

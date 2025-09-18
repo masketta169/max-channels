@@ -1,1 +1,0 @@
-import"./CJYJ-HhU.js";import{g as a,r as o,c as t,a as s,o as n,_ as r}from"./CvK9njM3.js";import"./B0FIwMiM.js";const p=a({__name:"index",setup(_){return o(!1),(c,e)=>(n(),t("div",null,e[0]||(e[0]=[s("h1",null,"Страница еще в разработке",-1)])))}}),m=r(p,[["__scopeId","data-v-107446a9"]]);export{m as default};
