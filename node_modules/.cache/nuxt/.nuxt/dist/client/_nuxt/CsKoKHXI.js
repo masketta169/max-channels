@@ -1,0 +1,1 @@
+import{b as r}from"./BJWXqVAu.js";const c={getAll:e=>r.get("/resources",{params:{type:e}}),getById:e=>r.get(`/resources/${e}`),getByCategory:e=>r.get(`/resources/category/${e}`),getRecommended:()=>r.get("/resources/recommended"),changeRecommended:(e,o)=>r.put(`/resources/${e}/recommended`,{isRecommended:o})};export{c as r};

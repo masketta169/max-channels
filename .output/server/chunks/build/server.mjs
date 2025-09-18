@@ -414,7 +414,7 @@ const _routes = [
     name: "index",
     path: "/",
     meta: __nuxt_page_meta$8 || {},
-    component: () => import('./index-7j2-uOGL.mjs')
+    component: () => import('./index-dlj1vZ_a.mjs')
   },
   {
     name: "logout",
@@ -425,7 +425,7 @@ const _routes = [
     name: "auth-login",
     path: "/auth/login",
     meta: __nuxt_page_meta$7 || {},
-    component: () => import('./login-CLl844AF.mjs')
+    component: () => import('./login-F3TgArKf.mjs')
   },
   {
     name: "admin",
@@ -437,37 +437,37 @@ const _routes = [
     name: "auth-register",
     path: "/auth/register",
     meta: __nuxt_page_meta$5 || {},
-    component: () => import('./register-2CtfynET.mjs')
+    component: () => import('./register-BJukFPWN.mjs')
   },
   {
     name: "profile",
     path: "/profile",
     meta: __nuxt_page_meta$4 || {},
-    component: () => import('./index-fV6pfygX.mjs')
+    component: () => import('./index-D_1rsly6.mjs')
   },
   {
     name: "admin-recommend",
     path: "/admin/recommend",
     meta: { ...__nuxt_page_meta$3 || {}, ...{ "middleware": "admin" } },
-    component: () => import('./recommend-BDIvA6Kk.mjs')
+    component: () => import('./recommend-CwJ9KsRv.mjs')
   },
   {
     name: "admin-categories",
     path: "/admin/categories",
     meta: { ...__nuxt_page_meta$2 || {}, ...{ "middleware": "admin" } },
-    component: () => import('./categories-DiwikHGO.mjs')
+    component: () => import('./categories-WZm0B53F.mjs')
   },
   {
     name: "admin-submissions",
     path: "/admin/submissions",
     meta: { ...__nuxt_page_meta$1 || {}, ...{ "middleware": "admin" } },
-    component: () => import('./submissions-DflrJtap.mjs')
+    component: () => import('./submissions-Dd--AUjL.mjs')
   },
   {
     name: "profile-submissions",
     path: "/profile/submissions",
     meta: __nuxt_page_meta || {},
-    component: () => import('./submissions-Cw54i6Gp.mjs')
+    component: () => import('./submissions-CkEZ0qKy.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {

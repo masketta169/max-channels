@@ -77,17 +77,17 @@ const fetchResources = async () => {
 
 fetchResources();
 
-onMounted(() => {
-  if (window.yaContextCb) {
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        blockId: 'R-A-17285874-1',
-        type: 'floorAd',
-        platform: 'desktop'
-      })
-    })
-  }
-})
+// onMounted(() => {
+//   if (window.yaContextCb) {
+//     window.yaContextCb.push(() => {
+//       Ya.Context.AdvManager.render({
+//         blockId: 'R-A-17285874-1',
+//         type: 'floorAd',
+//         platform: 'desktop'
+//       })
+//     })
+//   }
+// })
 </script>
 
 <style lang="scss" scoped>

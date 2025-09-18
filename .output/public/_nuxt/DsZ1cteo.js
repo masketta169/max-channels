@@ -1,0 +1,1 @@
+import{g as t,c as a,o,G as e,q as n,t as p,_ as c}from"./Be8IngJE.js";const i=t({__name:"StatusApplication",props:{status:{}},setup(r){return(s,l)=>(o(),a("div",{class:n(["status-application",s.status]),style:e({backgroundColor:s.status})},p(s.status),7))}}),_=Object.assign(c(i,[["__scopeId","data-v-c88f29b8"]]),{__name:"StatusApplication"});export{_ as S};
