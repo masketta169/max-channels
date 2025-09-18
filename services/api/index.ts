@@ -1,6 +1,5 @@
 import axios, { type AxiosRequestHeaders } from 'axios';
 import { authService } from './auth';
-import { useRuntimeConfig } from "#app";
 import { getCookie, setCookie } from '@/utils/cookies'
 
 const api = axios.create({
