@@ -4,7 +4,7 @@
     
     <main class="main">
         <RecommendedSection title="Список рекомендованных чатов, каналов и ботов" :chats="chatsRecommended" :channels="channelsRecommended" :bots="botsRecommended" />
-        <!-- <RecommendedSection title="Список недавно добавленных чатов, каналов и ботов" :chats="chatsRecent" :channels="channelsRecent" :bots="botsRecent" /> -->
+        <RecommendedSection title="Список недавно добавленных чатов, каналов и ботов" :chats="chatsRecent" :channels="channelsRecent" :bots="botsRecent" />
         <!-- <RecentSection /> -->
         <!-- <NewsFeed /> -->
     </main>
@@ -35,15 +35,15 @@ const botsRecommended = computed(() => {
   return resources.value.filter(resource => resource.type === 'BOT' && resource.isRecommended).slice(0, 5);
 });
 
-// const chatsRecent = computed(() => {
-//   return resources.value.reverse().filter(resource => resource.type === 'CHAT' && !resource.isRecommended).slice(0, 5);
-// });
-// const channelsRecent = computed(() => {
-//   return resources.value.reverse().filter(resource => resource.type === 'CHANNEL' && !resource.isRecommended).slice(0, 5);
-// });
-// const botsRecent = computed(() => {
-//   return resources.value.reverse().filter(resource => resource.type === 'BOT' && !resource.isRecommended).slice(0, 5);
-// });
+const chatsRecent = computed(() => {
+  return resources.value.filter(resource => resource.type === 'CHAT' && !resource.isRecommended).slice(0, 5);
+});
+const channelsRecent = computed(() => {
+  return resources.value.filter(resource => resource.type === 'CHANNEL' && !resource.isRecommended).slice(0, 5);
+});
+const botsRecent = computed(() => {
+  return resources.value.filter(resource => resource.type === 'BOT' && !resource.isRecommended).slice(0, 5);
+});
 
 useHead({
   title: 'Список рекомендованных чатов, каналов и ботов',
