@@ -3,7 +3,7 @@ import { authService } from './auth';
 import { getCookie, setCookie } from '@/utils/cookies'
 
 const api = axios.create({
-  baseURL: 'https://max-community.ru/api', 
+  baseURL: 'YOUR_API_URL', 
   withCredentials: true,
 });
 
